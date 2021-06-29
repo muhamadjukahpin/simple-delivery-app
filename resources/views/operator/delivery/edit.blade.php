@@ -46,7 +46,7 @@
                             <select class="custom-select @error('sender_country') is-invalid @enderror" id="sender_country" name="sender_country" onchange="getPort()">
                                 <option value="">Choose country.....</option>
                                 @foreach ($countries as $country)
-                                  <option value="{{ $country->id }}" {{old('sender_country',$delivery->sender_country) == $country_id ? 'selected' : '' }}>{{ $country->name }}</option>
+                                  <option value="{{ $country->id }}" {{old('sender_country',$delivery->sender_country) == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                 @endforeach
                               </select>
                               <div class="invalid-feedback text-md">
@@ -78,7 +78,7 @@
                             <select class="custom-select @error('receiver_country') is-invalid @enderror" id="receiver_country" name="receiver_country" onchange="getToPort()">
                                 <option value="">Choose country.....</option>
                                 @foreach ($countries as $country)
-                                  <option value="{{ $country->id }}" {{old('receiver_country',$delivery->receiver_country) == $country_id ? 'selected' : '' }}>{{ $country->name }}</option>
+                                  <option value="{{ $country->id }}" {{old('receiver_country',$delivery->receiver_country) == $country->id ? 'selected' : '' }}>{{ $country->name }}</option>
                                 @endforeach
                               </select>
                               <div class="invalid-feedback text-md">
